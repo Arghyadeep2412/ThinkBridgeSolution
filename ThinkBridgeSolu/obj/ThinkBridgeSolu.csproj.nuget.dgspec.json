@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\personal-work\\Think-bridge\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj": {}
+    "D:\\personal-work\\Think-bridge\\gitrepo\\ThinkBridgeSolution\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj": {}
   },
   "projects": {
-    "D:\\personal-work\\Think-bridge\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj": {
+    "D:\\personal-work\\Think-bridge\\gitrepo\\ThinkBridgeSolution\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\personal-work\\Think-bridge\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj",
+        "projectUniqueName": "D:\\personal-work\\Think-bridge\\gitrepo\\ThinkBridgeSolution\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj",
         "projectName": "ThinkBridgeSolu",
-        "projectPath": "D:\\personal-work\\Think-bridge\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj",
+        "projectPath": "D:\\personal-work\\Think-bridge\\gitrepo\\ThinkBridgeSolution\\ThinkBridgeSolu\\ThinkBridgeSolu.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\personal-work\\Think-bridge\\ThinkBridgeSolu\\obj\\",
+        "outputPath": "D:\\personal-work\\Think-bridge\\gitrepo\\ThinkBridgeSolution\\ThinkBridgeSolu\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"

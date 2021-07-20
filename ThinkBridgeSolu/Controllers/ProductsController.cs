@@ -25,7 +25,7 @@ namespace ThinkBridgeSolu.Controllers
                 resp.ErrorCode = ErrorCode.USER_NOT_ADMIN;
                 return resp;
             }
-            Products x_Prods = new Products();
+            ProductsBLL x_Prods = new ProductsBLL();
             return x_Prods.GetProductList();
         }
 
@@ -41,7 +41,7 @@ namespace ThinkBridgeSolu.Controllers
                 resp.ErrorCode = ErrorCode.USER_NOT_ADMIN;
                 return resp;
             }
-            Products x_Prods = new Products();
+            ProductsBLL x_Prods = new ProductsBLL();
             return x_Prods.GetProductById(prodId);
         }
 
@@ -57,7 +57,7 @@ namespace ThinkBridgeSolu.Controllers
                 resp.ErrorCode = ErrorCode.USER_NOT_ADMIN;
                 return resp;
             }
-            Products x_Prods = new Products();
+            ProductsBLL x_Prods = new ProductsBLL();
             return x_Prods.UpdateProduct(newDetails);
         }
 
@@ -73,7 +73,7 @@ namespace ThinkBridgeSolu.Controllers
                 resp.ErrorCode = ErrorCode.USER_NOT_ADMIN;
                 return resp;
             }
-            Products x_Prods = new Products();
+            ProductsBLL x_Prods = new ProductsBLL();
             return x_Prods.DeleteProduct(prodId);
         }
 
@@ -89,7 +89,7 @@ namespace ThinkBridgeSolu.Controllers
                 resp.ErrorCode = ErrorCode.USER_NOT_ADMIN;
                 return resp;
             }
-            Products x_Prods = new Products();
+            ProductsBLL x_Prods = new ProductsBLL();
             return x_Prods.AddProduct(newDetails);
         }
     }

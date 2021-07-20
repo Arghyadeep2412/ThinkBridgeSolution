@@ -7,9 +7,19 @@ using ThinkBridgeSolu.Models.CodeModels;
 
 namespace ThinkBridgeSolu.BLL
 {
-    public class Products
+    public class ProductsBLL
     {
         private sakilaContext dbContext = new sakilaContext();
+
+        private bool CheckIsCategoryIdPresent(int categoryId)
+        {
+            ProductCategory catDetails = dbContext.ProductCategories.AsQueryable().Where(cat => cat.CategoryId == categoryId).FirstOrDefault();
+            if(catDetails == null)
+            {
+                return false;
+            }
+            return true;
+        }
         private void UpdateProdItem(ref Product source, ref Product dest)
         {
             dest.UpdatedAt = DateTime.UtcNow;
@@ -28,6 +38,17 @@ namespace ThinkBridgeSolu.BLL
             if (source.ProductPrice.HasValue)
             {
                 dest.ProductPrice = source.ProductPrice;
+            }
+            if(source.CategoryId > 0)
+            {   
+                if(CheckIsCategoryIdPresent(source.CategoryId))
+                {
+                    dest.CategoryId = source.CategoryId;
+                }
+                else
+                {
+                    dest.CategoryId = Globals.DefaultProductCategoryId;
+                }
             }
         }
         public BaseResponse GetProductList()
@@ -141,9 +162,22 @@ namespace ThinkBridgeSolu.BLL
                 resp.Status = ResponseStatus.Error;
                 return resp;
             }
+            if(String.IsNullOrEmpty(newDetails.ProductName))
+            {
+                resp.Message = "Name is mandatory to add a new item";
+                resp.Status = ResponseStatus.Error;
+                return resp;
+            }
             try
             {
                 newDetails.UpdatedAt = DateTime.UtcNow;
+                if(newDetails.ProductPrice.HasValue)
+                {
+                    if(String.IsNullOrEmpty(newDetails.PriceCurrency))
+                    {
+                        newDetails.PriceCurrency = Globals.DefaultPriceCurrency;
+                    }
+                }
                 dbContext.Products.Add(newDetails);
                 dbContext.SaveChanges();
                 resp.Status = ResponseStatus.Success;
